@@ -30,5 +30,74 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
+
+        public void SetProgressValue(double value)
+        {
+            if(Dispatcher.CheckAccess())
+            {
+                Progress.Value = value;
+            }
+            else
+            {
+                Dispatcher.Invoke(() => { Progress.Value = value; });
+            }
+        }
+
+        private void StartNTB_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            int n = 0;
+            if (!int.TryParse(((TextBox)sender).Text, out n))
+                ((TextBox)sender).Text = "";
+            //if (n < 5)
+            //    ((TextBox)sender).Text = "5";
+            //MakeOk();
+        }
+
+        private void EndNTB_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            int n = 0;
+            if (!int.TryParse(((TextBox)sender).Text, out n))
+                ((TextBox)sender).Text = "";
+            //if (n > 20)
+            //    ((TextBox)sender).Text = "20";
+            //MakeOk();
+        }
+
+        private void StepSizeTB_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            int n = 0;
+            if (!int.TryParse(((TextBox)sender).Text, out n))
+                ((TextBox)sender).Text = "";
+            if (n > 5)
+                ((TextBox)sender).Text = "5";
+        }
+
+        private void TriesTB_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            int n = 0;
+            if (!int.TryParse(((TextBox)sender).Text, out n))
+                ((TextBox)sender).Text = "";
+            if(n>5)
+                ((TextBox)sender).Text = "5";
+        }
+        private void MakeOk()
+        {
+            try
+            {
+                if (int.Parse(StartNTB.Text) > int.Parse(EndNTB.Text))
+                {
+                    string i = StartNTB.Text;
+                    StartNTB.Text = EndNTB.Text;
+                    EndNTB.Text = i;
+                }
+            }
+            catch { }
+        }
+
+        private void PercentS_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (this.IsInitialized)
+                PercentValueView.Text = ((int)PercentS.Value).ToString()+" %";
+        }
     }
 }

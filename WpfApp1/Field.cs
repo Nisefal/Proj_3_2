@@ -8,22 +8,123 @@ namespace WpfApp1
 {
     class Field
     {
+        public int n;
         public int[,] PlatesFiel;
-        public int[,] LiftedPlates;
-        public List<Dictionary<int, int>> pipes; //list of list of indexes of x = list of pipes
+        public int[,] LiftedPlates; //0 || 1
+        public List<Pipe> pipes; //list of list of indexes of x = list of pipes
 
-        public Dictionary<int,int> PipeByNumber(int n)
+        public Pipe PipeByNumber(int n)
         {
             return pipes[n];
         }
 
-        public double GetPipeSum(int n)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="p"></param>
+        /// <returns></returns>
+        public int SumPipe(Pipe p)
         {
-            double sum = 0;
-
-            /// pipes[1][1][1] - вторая труба, втрой индекс.
-
+            int sum = 0;
+            foreach (Coordinate C in p.GetCoordinates())
+            {
+                sum += LiftedPlates[C.i, C.j];
+            }
             return sum;
+        }
+
+        public bool PipeLocked(Pipe p)
+        {
+            if (SumPipe(p) > 0)
+                return true;
+            else
+                return false;
+        }
+
+        public int AnswerSum()
+        {
+            int sum = 0;
+            for (int i = 0; i < n; i++)
+                for (int j = 0; j < n; j++)
+                    sum+=PlatesFiel[i, j] * LiftedPlates[i, j];
+            return sum;
+        }
+
+        public void AddPipe(Pipe p)
+        {
+            if (pipes == null)
+                pipes = new List<Pipe>();
+            pipes.Add(p);
+        }
+    }
+
+    class Coordinate
+    {
+        public int i;
+        public int j;
+
+        public Coordinate(int _i, int _j)
+        {
+            i = _i;
+            j = _j;
+        }
+
+        public static bool CoordinateExits(Coordinate c, int n)
+        {
+            if (c.i < 0 || c.j < 0 || c.i >= n || c.j >= n)
+                return false;
+            return true;
+        }
+    }
+
+    class Pipe
+    {
+        private List<Coordinate> pipe;
+
+        public Pipe()
+        {
+            pipe = new List<Coordinate>();
+        }
+
+        public Pipe(Coordinate c)
+        {
+            Add(c);
+        }
+
+        public Pipe(int i, int j)
+        {
+            Add(new Coordinate(i, j));
+        }
+
+        public void Add(Coordinate c)
+        {
+            if (pipe == null)
+                pipe = new List<Coordinate>();
+            pipe.Add(c);
+        }
+
+        public bool HasPoint(Coordinate c)
+        {
+            foreach (Coordinate coord in pipe)
+                if (c.i == coord.i && c.j==coord.j)
+                    return true;
+            return false;
+        }
+
+        public int Length()
+        {
+            return pipe.Count;
+        }
+
+        public Coordinate GetLast()
+        {
+            return pipe.Last();
+        }
+
+
+        public List<Coordinate> GetCoordinates()
+        {
+            return pipe;
         }
     }
 }

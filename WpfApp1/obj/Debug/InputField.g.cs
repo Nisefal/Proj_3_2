@@ -52,7 +52,7 @@ namespace WpfApp1 {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WpfApp1;component/inputfield.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Course_project_3_2;component/inputfield.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\InputField.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

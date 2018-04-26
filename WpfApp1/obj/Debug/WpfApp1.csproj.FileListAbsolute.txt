@@ -1,0 +1,16 @@
+C:\Users\kolya\source\repos\WpfApp1\WpfApp1\obj\Debug\InputField.g.cs
+C:\Users\kolya\source\repos\WpfApp1\WpfApp1\obj\Debug\MainWindow.g.cs
+C:\Users\kolya\source\repos\WpfApp1\WpfApp1\obj\Debug\App.g.cs
+C:\Users\kolya\source\repos\WpfApp1\WpfApp1\obj\Debug\Course_project_3_2_MarkupCompile.cache
+C:\Users\kolya\source\repos\WpfApp1\WpfApp1\obj\Debug\Course_project_3_2_MarkupCompile.lref
+C:\Users\kolya\source\repos\WpfApp1\WpfApp1\bin\Debug\Course_project_3_2.exe.config
+C:\Users\kolya\source\repos\WpfApp1\WpfApp1\bin\Debug\Course_project_3_2.exe
+C:\Users\kolya\source\repos\WpfApp1\WpfApp1\bin\Debug\Course_project_3_2.pdb
+C:\Users\kolya\source\repos\WpfApp1\WpfApp1\obj\Debug\InputField.baml
+C:\Users\kolya\source\repos\WpfApp1\WpfApp1\obj\Debug\MainWindow.baml
+C:\Users\kolya\source\repos\WpfApp1\WpfApp1\obj\Debug\Course_project_3_2.g.resources
+C:\Users\kolya\source\repos\WpfApp1\WpfApp1\obj\Debug\WpfApp1.Properties.Resources.resources
+C:\Users\kolya\source\repos\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.GenerateResource.Cache
+C:\Users\kolya\source\repos\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.CoreCompileInputs.cache
+C:\Users\kolya\source\repos\WpfApp1\WpfApp1\obj\Debug\Course_project_3_2.exe
+C:\Users\kolya\source\repos\WpfApp1\WpfApp1\obj\Debug\Course_project_3_2.pdb

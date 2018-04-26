@@ -12,22 +12,23 @@
             <RowDefinition Height="284*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="138*"/>
+            <ColumnDefinition Width="13*"/>
+            <ColumnDefinition Width="125*"/>
             <ColumnDefinition Width="142*"/>
-            <ColumnDefinition Width="237*"/>
+            <ColumnDefinition Width="216*"/>
+            <ColumnDefinition Width="21*"/>
         </Grid.ColumnDefinitions>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,39.158,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Column="1" Grid.Row="1"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,67.158,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Column="1" Grid.Row="1"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,11.158,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Column="1" Grid.Row="1"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,95.158,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Column="1" Grid.Row="1"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,123.158,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Column="1" Grid.Row="1"/>
-        <Label Content="Start n" Height="23" Margin="10,11.158,10,0" VerticalAlignment="Top" Grid.Row="1"/>
-        <Label Content="End n" Height="23" Margin="10,39.158,10,0" VerticalAlignment="Top" Grid.Row="1"/>
-        <Label Content="Step" Height="23" Margin="10,67.158,10,0" VerticalAlignment="Top" Grid.Row="1"/>
-        <Label Content="Procent" Height="23" Margin="10,95.158,10,0" VerticalAlignment="Top" Grid.Row="1"/>
-        <Label Content="Min length" Height="23" Margin="10,123.158,10,0" VerticalAlignment="Top" Grid.Row="1"/>
-        <Label Content="Tries" Height="23" Margin="10,151.158,10,0" VerticalAlignment="Top" Grid.Row="1"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,151.158,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Column="1" Grid.Row="1"/>
-        <ProgressBar HorizontalAlignment="Left" Height="15" Margin="10,191.158,0,0" VerticalAlignment="Top" Width="497" Grid.ColumnSpan="3" Grid.Row="1"/>
+        <TextBox Name="StartNTB" HorizontalAlignment="Left" Height="25" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Column="2" Grid.Row="1" TextChanged="StartNTB_TextChanged"/>
+        <TextBox Name="EndNTB" HorizontalAlignment="Left" Height="25" Margin="10,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Column="2" Grid.Row="1" TextChanged="EndNTB_TextChanged"/>
+        <TextBox Name="StepSizeTB" HorizontalAlignment="Left" Height="25" Margin="10,71,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Column="2" Grid.Row="1" TextChanged="StepSizeTB_TextChanged"/>
+        <TextBox Name="TriesTB" HorizontalAlignment="Left" Height="25" Margin="10,151,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Column="2" Grid.Row="1" TextChanged="TriesTB_TextChanged"/>
+        <Label Content="Start n" Height="25" Margin="10,10,10,0" VerticalAlignment="Top" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <Label Content="End n" Height="25" Margin="10,41,10,0" VerticalAlignment="Top" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <Label Content="Step size" Height="25" Margin="10,71,10,0" VerticalAlignment="Top" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <Label Content="Percent" Height="25" Margin="0,121,7,0" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1"/>
+        <Label Content="Tries per step" Height="25" Margin="10,151,10,0" VerticalAlignment="Top" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <ProgressBar Name="Progress" Value="0" HorizontalAlignment="Left" Height="15" Margin="10,191,0,0" VerticalAlignment="Top" Width="463" Grid.ColumnSpan="3" Grid.Row="1" Grid.Column="1"/>
+        <Slider Name="PercentS" Minimum="20" Grid.Column="2" Maximum="60" Value="0" HorizontalAlignment="Left" Margin="10,128,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" ValueChanged="PercentS_ValueChanged"/>
+        <TextBlock Name="PercentValueView" Grid.Column="3" HorizontalAlignment="Left" Margin="10,128,0,0" Grid.Row="1" TextWrapping="Wrap" Text="20 %" VerticalAlignment="Top" Height="18" Width="60"/>
     </Grid>
 </Window>
