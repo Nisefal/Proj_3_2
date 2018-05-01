@@ -30,5 +30,6 @@
         <ProgressBar Name="Progress" Value="0" HorizontalAlignment="Left" Height="15" Margin="10,191,0,0" VerticalAlignment="Top" Width="463" Grid.ColumnSpan="3" Grid.Row="1" Grid.Column="1"/>
         <Slider Name="PercentS" Minimum="20" Grid.Column="2" Maximum="60" Value="0" HorizontalAlignment="Left" Margin="10,128,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" ValueChanged="PercentS_ValueChanged"/>
         <TextBlock Name="PercentValueView" Grid.Column="3" HorizontalAlignment="Left" Margin="10,128,0,0" Grid.Row="1" TextWrapping="Wrap" Text="20 %" VerticalAlignment="Top" Height="18" Width="60"/>
+        <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="28,239,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
     </Grid>
 </Window>

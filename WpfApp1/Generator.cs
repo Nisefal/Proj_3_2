@@ -188,7 +188,7 @@ namespace WpfApp1
             //indexes = new Dictionary<int, int>();
             foreach (Pipe pipe in field.pipes)
                 foreach (Coordinate c in pipe.GetCoordinates())
-                    if(!pipe.HasPoint(c))
+                    if(!indexes.Contains(c))
                         indexes.Add(c);
 
             if (field.PlatesFiel.Length * field.PlatesFiel.Length / 100 * indexes.Count < percent)
@@ -207,9 +207,11 @@ namespace WpfApp1
         {
             Field f = new Field();
             n = current_n;
-
             //fill with plates
             f.PlatesFiel = new int[n, n];
+            f.LiftedPlates = new int[n, n];
+            f.pipes = new List<Pipe>();
+
             for (int i = 0; i < n; i++)
                 for (int j = 0; j < n; j++)
                     f.PlatesFiel[i, j] = RandomInt(1, 10);

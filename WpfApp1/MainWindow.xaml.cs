@@ -99,5 +99,19 @@ namespace WpfApp1
             if (this.IsInitialized)
                 PercentValueView.Text = ((int)PercentS.Value).ToString()+" %";
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string s = "";
+            Field f = Generator.GenerateField(10, 35);
+            var lst = f.pipes;
+            foreach (var m in lst)
+            {
+                foreach (var n in m.GetCoordinates())
+                {
+                    s += $"{n.i} {n.j}\n";
+                }
+            }
+        }
     }
 }
