@@ -6,16 +6,22 @@ using System.Threading.Tasks;
 
 namespace WpfApp1
 {
-    class Field
+    class Field : ICloneable, IDisposable
     {
         public int n;
-        public int[,] PlatesFiel;
+        public int[,] PlatesField;
         public int[,] LiftedPlates; //0 || 1
         public List<Pipe> pipes; //list of list of indexes of x = list of pipes
+
 
         public Pipe PipeByNumber(int n)
         {
             return pipes[n];
+        }
+
+        public object Clone()
+        {
+            return MemberwiseClone();
         }
 
         /// <summary>
@@ -46,7 +52,7 @@ namespace WpfApp1
             int sum = 0;
             for (int i = 0; i < n; i++)
                 for (int j = 0; j < n; j++)
-                    sum+=PlatesFiel[i, j] * LiftedPlates[i, j];
+                    sum+=PlatesField[i, j] * LiftedPlates[i, j];
             return sum;
         }
 
@@ -55,6 +61,22 @@ namespace WpfApp1
             if (pipes == null)
                 pipes = new List<Pipe>();
             pipes.Add(p);
+        }
+
+        public void Dispose()
+        {
+            n = 0;
+            PlatesField = null;
+            LiftedPlates = null;
+            pipes = null;
+        }
+        
+        public bool ValidateAnswer()
+        {
+            foreach (Pipe item in pipes)
+                if (!PipeLocked(item))
+                return false;
+            return true;
         }
     }
 
@@ -121,10 +143,16 @@ namespace WpfApp1
             return pipe.Last();
         }
 
-
         public List<Coordinate> GetCoordinates()
         {
             return pipe;
+        }
+
+        public Coordinate GetCoordinate(int i)
+        {
+            if (i >= 0 && i < Length())
+                return pipe[i];
+            else return null;
         }
     }
 }

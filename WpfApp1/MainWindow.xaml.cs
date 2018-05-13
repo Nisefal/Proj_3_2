@@ -29,6 +29,7 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
+            Method.SolveWithGeneticAlgorythm(Generator.GenerateField(5, 50));
         }
 
         public void SetProgressValue(double value)

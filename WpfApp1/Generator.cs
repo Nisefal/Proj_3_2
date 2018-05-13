@@ -191,7 +191,7 @@ namespace WpfApp1
                     if(!indexes.Contains(c))
                         indexes.Add(c);
 
-            if (field.PlatesFiel.Length * field.PlatesFiel.Length / 100 * indexes.Count < percent)
+            if (field.PlatesField.Length * field.PlatesField.Length / 100 * indexes.Count < percent)
                 return false;
             else
                 return true;
@@ -208,13 +208,13 @@ namespace WpfApp1
             Field f = new Field();
             n = current_n;
             //fill with plates
-            f.PlatesFiel = new int[n, n];
+            f.PlatesField = new int[n, n];
             f.LiftedPlates = new int[n, n];
             f.pipes = new List<Pipe>();
 
             for (int i = 0; i < n; i++)
                 for (int j = 0; j < n; j++)
-                    f.PlatesFiel[i, j] = RandomInt(1, 10);
+                    f.PlatesField[i, j] = RandomInt(1, 10);
 
             //fill with pipes
             if (indexes == null)
