@@ -56,7 +56,7 @@ namespace WpfApp1
                     temp.Add(i);
                 }
 
-                MixAnswers(temp);
+                MixAnswers(f, temp);
 
                 min_curr = 0;
                 int b = SelectBestIndex(field, answers);
@@ -163,9 +163,11 @@ namespace WpfApp1
                     newpop.Add(item);
             }
 
-            while (newpop.Count()!=10)
+            while (newpop.Count()!=10)      // reanimation
             {
-                newpop.Add(Generator.Ge)
+                int[] i = new int[f.n * f.n];
+                MakeAnswer(f, i);
+                newpop.Add(i);
             }
 
             return newpop;
